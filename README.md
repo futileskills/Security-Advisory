@@ -6,11 +6,11 @@ This document details a critical unauthenticated command injection vulnerability
 
     Vulnerability Type:
 
-        Missing Authentication for Critical Function (CWE-306)
+   > Missing Authentication for Critical Function (CWE-306)
 
-        Improper Access Control (CWE-284)
+   > Improper Access Control (CWE-284)
 
-        Unauthenticated Command Injection (CWE-77: Improper Neutralization of Special Elements used in a Command)
+   > Unauthenticated Command Injection (CWE-77: Improper Neutralization of Special Elements used in a Command)
 
     Vendor: Epson
 
