@@ -42,7 +42,7 @@ Step-by-step reproduction:
 
     Once the connection is established, send the following raw hex command directly to the printer.
 
-printf '\x1b\x70\x00\x19\x32' | nc <PRINTER_IP_ADDRESS> 9100
+            printf '\x1b\x70\x00\x19\x32' | nc <PRINTER_IP_ADDRESS> 9100
 
 Upon receipt of this hex sequence, the printer will immediately open its attached cash drawer.
 
