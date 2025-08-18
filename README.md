@@ -87,4 +87,4 @@ User-side:
 
    Isolate all POS devices on a private, segmented network that is not directly accessible from the main corporate or public Wi-Fi network.
 
-   Configure firewall rules to explicitly deny any traffic to the printer's port 9100 that does not originate from the dedicated POS terminal or application server.
+   Configure firewall rules to explicitly deny any traffic to the printer's port 9100 that does not originate from the dedicated POS terminal or application server. 
