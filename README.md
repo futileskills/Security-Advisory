@@ -38,27 +38,27 @@ The following steps demonstrate the vulnerability using a standard command-line 
 
 Step-by-step reproduction:
 
-    Connect to the target printer's IP address on port 9100.
+   Connect to the target printer's IP address on port 9100.
 
-    Once the connection is established, send the following raw hex command directly to the printer.
+   Once the connection is established, send the following raw hex command directly to the printer.
 
-```
-    printf '\x1b\x70\x00\x19\x32' | nc <PRINTER_IP_ADDRESS> 9100
-```
+    ```
+     printf '\x1b\x70\x00\x19\x32' | nc <PRINTER_IP_ADDRESS> 9100
+    ```
 
 Upon receipt of this hex sequence, the printer will immediately open its attached cash drawer.
 
 Analysis of the command:
 
-    \x1b (ESC): The escape character, signaling the start of a command sequence.
+   \x1b (ESC): The escape character, signaling the start of a command sequence.
 
-    \x70 (p): The command to activate a peripheral (the cash drawer).
+   \x70 (p): The command to activate a peripheral (the cash drawer).
 
-    \x00: The first parameter, which selects the cash drawer connector pin 2.
+   \x00: The first parameter, which selects the cash drawer connector pin 2.
 
-    \x19: The second parameter, setting the ON pulse time.
+   \x19: The second parameter, setting the ON pulse time.
 
-    \x32: The third parameter, setting the OFF pulse time.
+   \x32: The third parameter, setting the OFF pulse time.
 
 This command sequence specifically opens the cash drawer, but an attacker could also send other commands, such as a paper cut command (\x1d\x56\x01\x40), to cause physical disruption without any credentials.
 
@@ -66,24 +66,24 @@ This command sequence specifically opens the cash drawer, but an attacker could 
 
 Exploitation of this vulnerability has significant consequences for businesses and organizations:
 
-    Financial Loss: A remote attacker can open the cash drawer at will, enabling physical theft.
+   Financial Loss: A remote attacker can open the cash drawer at will, enabling physical theft.
 
-    Disruption of Business Operations: An attacker could trigger actions like printing endless receipts or cutting paper, causing a physical denial of service. Arbitrary text could be printed to generate fraudulent receipts or malicious messages.
+   Disruption of Business Operations: An attacker could trigger actions like printing endless receipts or cutting paper, causing a physical denial of service. Arbitrary text could be printed to generate fraudulent receipts or malicious messages.
 
-    Social Engineering: The vulnerability can be used as a tool for social engineering, creating distractions or printing information to trick employees or customers.
+   Social Engineering: The vulnerability can be used as a tool for social engineering, creating distractions or printing information to trick employees or customers.
 
 ### 5. Suggested Mitigation
 
 Vendor-side:
 
-    Implement proper authentication and authorization for all commands sent over the network port.
+   Implement proper authentication and authorization for all commands sent over the network port.
 
-    Consider adding an optional security mode, configurable via the device's web interface, that restricts access to port 9100 to a list of allowed IP addresses.
+   Consider adding an optional security mode, configurable via the device's web interface, that restricts access to port 9100 to a list of allowed IP addresses.
 
-    Implement a secure printing protocol like IPPS (IPP over TLS) that supports authentication.
+   Implement a secure printing protocol like IPPS (IPP over TLS) that supports authentication.
 
 User-side:
 
-    Isolate all POS devices on a private, segmented network that is not directly accessible from the main corporate or public Wi-Fi network.
+   Isolate all POS devices on a private, segmented network that is not directly accessible from the main corporate or public Wi-Fi network.
 
-    Configure firewall rules to explicitly deny any traffic to the printer's port 9100 that does not originate from the dedicated POS terminal or application server.
+   Configure firewall rules to explicitly deny any traffic to the printer's port 9100 that does not originate from the dedicated POS terminal or application server.
