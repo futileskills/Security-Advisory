@@ -1,8 +1,8 @@
 # Security Advisory: Unauthenticated Command Injection in Epson POS Printers
 
-<div style="text-align: center;">
-   ## Summary
-</div>
+<center>
+    ## Summary
+</center>
 
 This document details a critical unauthenticated command injection vulnerability affecting a range of Epson Point of Sale (POS) printers. The flaw allows a remote attacker to connect to a printer's network interface and send raw, unauthenticated ESC/POS commands. Successful exploitation grants an attacker on the same network the ability to execute arbitrary commands, such as opening the cash drawer, without any form of authentication. This vulnerability is believed to affect numerous models using the same underlying protocol.
 **1. Vulnerability Details**
