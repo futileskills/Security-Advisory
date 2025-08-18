@@ -51,15 +51,15 @@ Upon receipt of this hex sequence, the printer will immediately open its attache
 
 Analysis of the command:
 
-   \x1b (ESC): The escape character, signaling the start of a command sequence.
+   &nbsp;&nbsp;&nbsp;&nbsp;\x1b (ESC): The escape character, signaling the start of a command sequence.
 
-   \x70 (p): The command to activate a peripheral (the cash drawer).
+   &nbsp;&nbsp;&nbsp;&nbsp;\x70 (p): The command to activate a peripheral (the cash drawer).
 
-   \x00: The first parameter, which selects the cash drawer connector pin 2.
+   &nbsp;&nbsp;&nbsp;&nbsp;\x00: The first parameter, which selects the cash drawer connector pin 2.
 
-   \x19: The second parameter, setting the ON pulse time.
+   &nbsp;&nbsp;&nbsp;&nbsp;\x19: The second parameter, setting the ON pulse time.
 
-   \x32: The third parameter, setting the OFF pulse time.
+   &nbsp;&nbsp;&nbsp;&nbsp;\x32: The third parameter, setting the OFF pulse time.
 
 This command sequence specifically opens the cash drawer, but an attacker could also send other commands, such as a paper cut command (\x1d\x56\x01\x40), to cause physical disruption without any credentials.
 
