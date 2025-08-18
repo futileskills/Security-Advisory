@@ -2,9 +2,9 @@
 ## Summary
 
 This document details a critical unauthenticated command injection vulnerability affecting a range of Epson Point of Sale (POS) printers. The flaw allows a remote attacker to connect to a printer's network interface and send raw, unauthenticated ESC/POS commands. Successful exploitation grants an attacker on the same network the ability to execute arbitrary commands, such as opening the cash drawer, without any form of authentication. This vulnerability is believed to affect numerous models using the same underlying protocol.
-1. Vulnerability Details
+**1. Vulnerability Details**
 
-    Vulnerability Type:
+Vulnerability Type:
 
    &nbsp;&nbsp;&nbsp;&nbsp;Missing Authentication for Critical Function (CWE-306)
 
@@ -12,15 +12,15 @@ This document details a critical unauthenticated command injection vulnerability
 
    &nbsp;&nbsp;&nbsp;&nbsp;Unauthenticated Command Injection (CWE-77: Improper Neutralization of Special Elements used in a Command)
 
-    Vendor: Epson
+**Vendor: Epson**
 
-    Affected Products: Epson POS printers, specifically identified on the TM-M30II (m362c) model. It is highly likely that other Epson and third-party printers using the same ESC/POS command set over a raw TCP/IP connection are also affected. This includes models in the TM-T and TM-M series.
+**Affected Products:** Epson POS printers, specifically identified on the TM-M30II (m362c) model. It is highly likely that other Epson and third-party printers using the same ESC/POS command set over a raw TCP/IP connection are also affected. This includes models in the TM-T and TM-M series.
 
-    Affected Versions: All firmware versions prior to an as-yet-unreleased patch.
+&nbsp;&nbsp;&nbsp;&nbsp;Affected Versions: All firmware versions prior to an as-yet-unreleased patch.
 
-    Attack Vector: Remote, unauthenticated network connection.
+&nbsp;&nbsp;&nbsp;&nbsp;Attack Vector: Remote, unauthenticated network connection.
 
-    Protocol: Raw TCP/IP on port 9100.
+&nbsp;&nbsp;&nbsp;&nbsp;Protocol: Raw TCP/IP on port 9100.
 
 ### 2. Technical Description
 
