@@ -75,16 +75,16 @@ Exploitation of this vulnerability has significant consequences for businesses a
 
 ### 5. Suggested Mitigation
 
-Vendor-side:
+   Vendor-side:
 
-   Implement proper authentication and authorization for all commands sent over the network port.
+   &nbsp;&nbsp;&nbsp;&nbsp;Implement proper authentication and authorization for all commands sent over the network port.
 
-   Consider adding an optional security mode, configurable via the device's web interface, that restricts access to port 9100 to a list of allowed IP addresses.
+   &nbsp;&nbsp;&nbsp;&nbsp;Consider adding an optional security mode, configurable via the device's web interface, that restricts access to port 9100 to a list of allowed IP addresses.
 
-   Implement a secure printing protocol like IPPS (IPP over TLS) that supports authentication.
+   &nbsp;&nbsp;&nbsp;&nbsp;Implement a secure printing protocol like IPPS (IPP over TLS) that supports authentication.
 
-User-side:
+   User-side:
 
-   Isolate all POS devices on a private, segmented network that is not directly accessible from the main corporate or public Wi-Fi network.
+   &nbsp;&nbsp;&nbsp;&nbsp;Isolate all POS devices on a private, segmented network that is not directly accessible from the main corporate or public Wi-Fi network.
 
-   Configure firewall rules to explicitly deny any traffic to the printer's port 9100 that does not originate from the dedicated POS terminal or application server. 
+   &nbsp;&nbsp;&nbsp;&nbsp;Configure firewall rules to explicitly deny any traffic to the printer's port 9100 that does not originate from the dedicated POS terminal or application server. 
