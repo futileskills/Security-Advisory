@@ -1,5 +1,5 @@
 # CVE Request for Unauthenticated Command Injection in Epson POS Printers
-Summary
+## Summary
 
 This document details a critical unauthenticated command injection vulnerability affecting a range of Epson Point of Sale (POS) printers. The flaw allows a remote attacker to connect to a printer's network interface and send raw, unauthenticated ESC/POS commands. Successful exploitation grants an attacker on the same network the ability to execute arbitrary commands, such as opening the cash drawer, without any form of authentication. This vulnerability is believed to affect numerous models using the same underlying protocol.
 1. Vulnerability Details
@@ -22,7 +22,7 @@ This document details a critical unauthenticated command injection vulnerability
 
     Protocol: Raw TCP/IP on port 9100.
 
-2. Technical Description
+### 2. Technical Description
 
 Epson POS printers are designed to receive raw printer commands over a TCP connection on port 9100. These commands use a language called ESC/POS, an industry standard for thermal receipt printers.
 
@@ -31,7 +31,8 @@ The printer's firmware does not implement any authentication or authorization me
 Since the ESC/POS command set includes instructions for critical hardware functions like opening the cash drawer (ESC p m t1 t2), an attacker can exploit this design flaw to trigger physical actions.
 
 The vulnerability highlights the critical importance of proper network segmentation. If isolation measures mandated by standards like PCI DSS are breached, an attacker can leverage this vulnerability to gain control of the device.
-3. Proof of Concept (PoC)
+
+### 3. Proof of Concept (PoC)
 
 The following steps demonstrate the vulnerability using a standard command-line utility.
 
@@ -58,7 +59,8 @@ Analysis of the command:
     \x32: The third parameter, setting the OFF pulse time.
 
 This command sequence specifically opens the cash drawer, but an attacker could also send other commands, such as a paper cut command (\x1d\x56\x01\x40), to cause physical disruption without any credentials.
-4. Impact
+
+### 4. Impact
 
 Exploitation of this vulnerability has significant consequences for businesses and organizations:
 
@@ -68,7 +70,7 @@ Exploitation of this vulnerability has significant consequences for businesses a
 
     Social Engineering: The vulnerability can be used as a tool for social engineering, creating distractions or printing information to trick employees or customers.
 
-5. Suggested Mitigation
+### 5. Suggested Mitigation
 
 Vendor-side:
 
