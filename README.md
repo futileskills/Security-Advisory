@@ -1,4 +1,4 @@
-<h1 align="center">Security Advisory: Unauthenticated Command Injection in Epson POS Printers</h1>
+<h1 align="center">Security Advisory: Unauthenticated Command Injection in ESC/POS Printers</h1>
 
 A CVE ID request has been submitted for this issue. This advisory will be updated with the assigned CVE once it is issued.
 
