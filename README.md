@@ -1,6 +1,6 @@
 <h1 align="center">Security Advisory: Unauthenticated Command Injection in ESC/POS Printers</h1>
 
-A CVE ID request has been submitted for this issue. This advisory will be updated with the assigned CVE once it is issued.
+CVE-2026-23767
 
 ## Summary:
 
