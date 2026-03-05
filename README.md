@@ -12,10 +12,6 @@ Vulnerability Type:
 
    &nbsp;&nbsp;&nbsp;&nbsp;Missing Authentication for Critical Function (CWE-306)
 
-   &nbsp;&nbsp;&nbsp;&nbsp;Improper Access Control (CWE-284)
-
-   &nbsp;&nbsp;&nbsp;&nbsp;Unauthenticated Command Injection (CWE-77: Improper Neutralization of Special Elements used in a Command)
-
 **Vendor: Epson**
 
 **Affected Products:** Epson POS printers, specifically identified on the TM-M30II (m362c) model. It is highly likely that other Epson and third-party printers using the same ESC/POS command set over a raw TCP/IP connection are also affected. This includes models in the TM-T and TM-M series.
