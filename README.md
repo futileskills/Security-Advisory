@@ -11,6 +11,8 @@ This document details a critical unauthenticated command injection vulnerability
 Vulnerability Type:
 
    &nbsp;&nbsp;&nbsp;&nbsp;Missing Authentication for Critical Function (CWE-306)
+   &nbsp;&nbsp;&nbsp;&nbsp;Improper access control (CWE-284)
+   &nbsp;&nbsp;&nbsp;&nbsp;Cleartext transmission of sensitive information (CWE-319)
 
 **Vendor: Epson**
 
